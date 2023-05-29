@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Elemento più piccolo in un array - Cavone Antonio 4ITIAB</title>
+</head>
+<body>
+	<a href="index.html"><= Torna indietro</a>
+	<h3>Aprire la console</h3>
+	<p>Nome funzione: elementoPiccolo() o elementoPiccoloSlice()<br>Funzione attiva: elementoPiccoloSlice(array, Infinity)</p>
+	<p>array = [-5, 104, -20, -3, 2, 17]</p>
+	<script type="text/javascript">
+		
+		let array = [-5, 104, -20, -3, 2, 17]
+
+		function elementoPiccolo(array, min){
+			if(array.length === 1){
+				return Math.min(min, array[0])
+			}else{
+				let lastElement = array.pop()
+				/*if(lastElement < min){
+					min = lastElement
+				}
+				return elementoPiccolo(array, min)*/
+				return elementoPiccolo(array, Math.min(lastElement, min))
+			}
+		}
+
+
+		function elementoPiccoloSlice(array, min){
+			if(array.length === 1){
+				return Math.min(min, array[0])
+			}else{
+				let firstElement = array[0]
+				array = array.slice(1)
+				return elementoPiccoloSlice(array, Math.min(firstElement, min))
+			}
+		}
+
+
+		console.log(elementoPiccoloSlice(array, Infinity))
+
+	</script>
+</body>
+</html>

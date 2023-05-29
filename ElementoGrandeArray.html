@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Elemento più grande in un array - Cavone Antonio 4ITIAB</title>
+</head>
+<body>
+	<a href="index.html"><= Torna indietro</a>
+	<h3>Aprire la console</h3>
+	<p>Nome funzione: elementoGrande(array, ) o elementoGrandeSlice(array, )<br>Funzione attiva: elementoGrandeSlice(array, -Infinity)</p>
+	<p>array = [-5, 104, -20, -3, 2, 17]</p>
+	<script type="text/javascript">
+		
+		let array = [-5, 104, -20, -3, 2, 17]
+
+		function elementoGrande(array, max){
+			if(array.length === 1){
+				return Math.max(max, array[0])
+			}else{
+				let lastElement = array.pop()
+				/*if(lastElement < max){
+					max = lastElement
+				}
+				return elementoGrande(array, max)*/
+				return elementoGrande(array, Math.max(lastElement, max))
+			}
+		}
+
+
+		function elementoGrandeSlice(array, max){
+			if(array.length === 1){
+				return Math.max(max, array[0])
+			}else{
+				let firstElement = array[0]
+				array = array.slice(1)
+				return elementoGrandeSlice(array, Math.max(firstElement, max))
+			}
+		}
+
+
+		console.log(elementoGrandeSlice(array, -Infinity))
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+		Moltiplica Array - Cavone Antonio - 4ITIAB
+	</title>
+</head>
+<body>
+	<a href="index.html"><= Torna indietro</a>
+	<h3>Aprire la console</h3>
+	<p>Nome funzione: moltiplicaArrayRicorsivo(array)<br>Funzione attiva: moltiplicaArrayRicorsivo(array)</p>
+	<p>array = [10, 5, 1, 8, 104]</p>
+	<script type="text/javascript">
+		let array = [10, 5, 1, 8, 104]  //Moltiplicazione corretta: 41600
+		let moltiplicazione = 1
+
+		function moltiplicaArrayRicorsivo(array){
+			if(array.length < 1){
+				return moltiplicazione
+			}else{
+				return moltiplicazione * array[0] * moltiplicaArrayRicorsivo(array.slice(1))
+			}
+		}
+
+		console.log(moltiplicaArrayRicorsivo(array))
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+		Somma N numeri - Cavone Antonio - 4ITIAB
+	</title>
+</head>
+<body>
+	<a href="index.html"><= Torna indietro</a>
+	<h3>Aprire la console</h3>
+	<p>Nome funzione: sommaIterativo, sommaRicorsivo(num) o sommaRicorsivo2(num)<br>Funzione attiva: sommaRicorsivo(5)</p>
+	<script type="text/javascript">
+		function sommaIterativo(n){
+			let somma = 0
+			for (let i = 0; i <= n; i++){
+				somma = somma + i
+			}
+				return somma;
+		}
+		
+		function sommaRicorsivo(num){
+			if(num === 1){
+				return 1
+			}else{
+				return sommaRicorsivo(num - 1) + num
+			}
+		}
+
+
+		function sommaRicorsivo2(num){
+			if(num === num*(num + 1)){
+				return num
+			}else{
+				return num + sommaRicorsivo2(num - 1)
+			}
+		}
+
+		console.log(sommaRicorsivo(5))
+	</script>
+</body>
+</html>
